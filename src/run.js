@@ -27,6 +27,7 @@ const PREPEND_TOKEN = '<!-- auto-changelog-above -->'
 
 const getOptions = async argv => {
   const commandOptions = new Command()
+    .option('-a, --append', 'append to the existing changelog instead of replacing it')
     .option('-o, --output <file>', `output file, default: ${DEFAULT_OPTIONS.output}`)
     .option('-c, --config <file>', `config file location, default: ${DEFAULT_OPTIONS.config}`)
     .option('-t, --template <template>', `specify template to use [compact, keepachangelog, json], default: ${DEFAULT_OPTIONS.template}`)

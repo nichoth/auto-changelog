@@ -92,10 +92,13 @@ const compileTemplate = async (releases, options) => {
       setup(Handlebars)
     }
   }
+
   const compile = Handlebars.compile(await getTemplate(template), COMPILE_OPTIONS)
+
   if (template === 'json') {
     return compile({ releases, options })
   }
+
   return cleanTemplate(compile({ releases, options }))
 }
 
